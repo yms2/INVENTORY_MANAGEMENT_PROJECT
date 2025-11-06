@@ -13,7 +13,10 @@ import {
   ExportOutlined,
   EditOutlined,
   SwapOutlined,
-  HistoryOutlined
+  HistoryOutlined,
+  DatabaseOutlined,
+  UsergroupAddOutlined,
+  EnvironmentOutlined
 } from '@ant-design/icons';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -72,6 +75,41 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed, onCollapse }) => {
       key: '/history',
       icon: <HistoryOutlined />,
       label: '내역',
+    },
+    {
+      key: '/data-management',
+      icon: <DatabaseOutlined />,
+      label: '데이터 관리',
+      children: [
+        {
+          key: '/data-management/inventory',
+          icon: <FileTextOutlined />,
+          label: '제품',
+        },
+        {
+          key: '/data-management/inventory',
+          icon: <UsergroupAddOutlined />,
+          label: '거래처',
+        },
+        {
+          key: '/data-management/inventory',
+            icon: <EnvironmentOutlined />,
+            label: '위치',
+        }
+      ],
+    },
+    {
+      key: '/settings',
+      icon: <SettingOutlined />,
+      label: '설정',
+      children: [
+        {
+          key: '/settings/profile',
+          icon: <UserOutlined />,
+          label: '프로필',
+        },
+
+      ],
     },
   ];
 
